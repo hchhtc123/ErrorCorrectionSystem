@@ -26,7 +26,19 @@
 
 ![文本纠错技术路线](https://gitee.com/hchhtc123/picture/raw/master/typora/%E6%96%87%E6%9C%AC%E7%BA%A0%E9%94%99%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF.png)
 
-## 四.项目结构说明：
+## 四.项目演示：
+
+**项目演示视频：** https://www.bilibili.com/video/BV1qF411L779/
+
+**文本纠错演示：**
+
+![文本纠错演示](https://gitee.com/hchhtc123/picture/raw/master/typora/%E6%96%87%E6%9C%AC%E7%BA%A0%E9%94%99%E6%BC%94%E7%A4%BA.png)
+
+**文档纠错演示：**
+
+![文档纠错演示](https://gitee.com/hchhtc123/picture/raw/master/typora/%E6%96%87%E6%A1%A3%E7%BA%A0%E9%94%99%E6%BC%94%E7%A4%BA.png)
+
+## 五.项目结构说明：
 
   1. backend文件夹为后端API服务模块，其中best_model文件夹存放基于PaddleNLP训练好的文本纠错模型参数。main.py为后端API服务主程序。
 
@@ -34,7 +46,7 @@
 
   3. 项目说明文档.txt：对整个项目环境配置进行了详细地介绍，项目必看！
 
-## 五.学习资料：
+## 六.学习资料：
 
   1. FastAPI官方文档：https://fastapi.tiangolo.com/zh/
   2. Postman使用教程：https://mp.weixin.qq.com/s/IoseF-2Ma8mH2gdQLn1rUA
@@ -42,6 +54,6 @@
   4. ElementUI文档：https://v3.cn.vuejs.org/
   5. vue-admin-template：https://github.com/PanJiaChen/vue-admin-template
 
-## 六.作者联系：
+## 七.作者联系：
 
    项目运行过程中遇到问题欢迎向项目提issue也可以qq联系1075558916，注意提供完整报错信息和截图便于定位和解决问题！
