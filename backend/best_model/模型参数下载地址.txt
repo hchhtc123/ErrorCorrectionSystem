@@ -1,0 +1,9 @@
+训练好的模型参数下载地址：
+链接：https://pan.baidu.com/s/1vdv4zFxQ3SrhA4C7sdAJAA 
+提取码：yyds
+
+想要了解具体训练流程的可以前往：
+https://aistudio.baidu.com/aistudio/projectdetail/2546231
+
+感兴趣的可以通过扩充数据集、模型优化等进一步提升模型文本纠错效果。
+

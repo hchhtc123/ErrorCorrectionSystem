@@ -1,0 +1,111 @@
+一.项目说明：
+
+项目介绍教程：https://aistudio.baidu.com/aistudio/projectdetail/4027551
+喜欢的小伙伴可以Fork、喜欢、关注三连！
+
+1.中文文本纠错（CSC）任务是一项NLP基础任务，其输入是一个可能含有语法错误的中文句子，输出是一个正确的中文句子。本项目基于PaddleNLP开源模型：ERNIE for Chinese Spelling Correction完成文本纠错模型的训练，并实现了前后端分离式的web端部署，便于用户直接体验功能。
+技术栈：后端：PaddleNLP +FastAPI；前端：Vue+Element UI。
+
+2.Web端主要功能：用户可以输入要进行纠错的文本或选择上传要进行纠错的word文件，点击进行纠错等待片刻即可获取纠错后文本，支持结果保存。
+
+3.模型训练部分不再展开，具体参考坑姐项目：https://aistudio.baidu.com/aistudio/projectdetail/2546231?channelType=0&channel=0
+由于模型较大，已挂载网盘，训练好的模型参数下载地址查看：backend\best_model\模型参数下载地址.txt文件
+
+4.项目目录结构：
+a.backend文件夹为后端API服务模块，其中best_model文件夹存放基于PaddleNLP训练好的文本纠错模型参数。main.py为后端API服务主程序。
+b.frontend文件夹为文本纠错系统web前端界面模块，/src/views下存放搭建的页面。
+c.项目说明文档.txt：对整个项目环境配置进行了详细地介绍，项目必看！
+
+5.学习资料：
+FastAPI官方文档：https://fastapi.tiangolo.com/zh/
+Postman使用教程：https://mp.weixin.qq.com/s/IoseF-2Ma8mH2gdQLn1rUA
+Vue官方文档：https://v3.cn.vuejs.org/
+ElementUI文档：https://v3.cn.vuejs.org/
+vue-admin-template：https://github.com/PanJiaChen/vue-admin-template
+
+二.项目环境配置：
+
+2.1 后端环境配置：
+
+首先需要下载安装Python包管理器Anaconda：https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/
+访问镜像下载网站，根据自己电脑系统（win64或Linux等）选择合适的版本，建议选择较新的版本。
+
+// 配置清华源镜像加速
+ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+ conda config --set show_channel_urls yes
+
+//创建新环境，环境名为csc，python版本为3.7
+conda create -n csc python=3.7
+
+// 进入刚才创建的虚拟环境csc，注意后续环境配置操作都将在该环境中进行配置！！！
+activate csc
+
+// 下载paddle，建议安装GPU版本性能更优。简化配置的话也可以下载CPU版本
+// paddle官网下载地址（根据型号等进行选择）：
+https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/zh/install/pip/linux-pip.html
+
+// 若安装gpu版本需要先配置cuda和cudnn，参考教程：
+https://aistudio.baidu.com/aistudio/projectdetail/696822?channelType=0&channel=0
+
+// 下面给出PaddlePaddle 2.3 CPU版本 Windows下pip的下载命令（具体建议以官网为准）：
+python -m pip install paddlepaddle==2.3.0 -i https://mirror.baidu.com/pypi/simple
+
+// paddle测试是否安装成功，在命令行中依次输入：
+python
+import paddle
+paddle.utils.run_check()
+// 若提示“PaddlePaddle is installed successfully!”则安装成功！
+
+// 下载文本纠错所需依赖库
+pip install --upgrade paddlenlp
+pip install pypinyin --upgrade
+
+// 下载word处理依赖库
+pip install python-docx
+
+// 下载其他依赖包
+pip install python-multipart
+
+// 安装后端框架FastAPI
+pip install fastapi
+pip install "uvicorn[standard]"
+
+// demo测试：通过cd命令进入项目目录，测试文本纠错demo
+// 文本纠错
+python demo1.py
+// word文档纠错
+python demo2.py
+
+// 接口调试可以下载安装Postman软件便于后端Restful API接口的访问测试
+Postman使用参考：https://mp.weixin.qq.com/s/IoseF-2Ma8mH2gdQLn1rUA
+
+// 通过cd命令进行项目backend文件夹，启动后端服务！
+python main.py
+// ps:看到“Application startup complete”和“Uvicorn ruuning on http:127.0.0.1:8000”代表后端API项目启动成功
+
+2.2 前端环境配置：
+
+建议下载个前端IDE便于调试，建议使用VS Code，在VS Code插件市场下载vue和eslint插件。
+
+安装node.js，后续需要使用到npm管理包：
+参考：https://m.php.cn/article/483528.html
+
+// 通过cd命令进行项目frontend文件夹，安装项目依赖
+npm install
+
+// 启动前端项目
+npm run dev
+// ps:看到App running at:Local: http://localhost:9528代表项目启动成功
+此时访问http://localhost:9528即可进入纠错系统
+
+// 注意要完整访问的话，前端和后端项目都要启动哦！
+
+三.项目优化方向：
+1.感兴趣的小伙伴可以通过扩充数据集及模型优化调参等进一步优化提升训练好的文本纠错模型效果。
+2.本项目实现了前后端分离式的web端文本纠错系统，感兴趣的可以将后端项目部署服务器开放API接口服务使得不同ip也可以直接访问服务。
+前端和后端上都可以根据自身需要进行更多功能补充。如错误提示、添加规则错误检测等。
+
+四.联系作者：
+   项目运行过程中遇到问题欢迎在项目评论区留言反馈也可以qq联系1075558916，注意提供完整报错信息和截图便于定位和解决问题。
+
