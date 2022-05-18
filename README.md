@@ -18,11 +18,11 @@
 
 ## 三.总技术路线：
 
-  a.基于PaddleNLP的ERNIE模型在SIGHAN数据集完成中文文本纠错模型的训练。
+  1. 基于PaddleNLP的ERNIE模型在SIGHAN数据集完成中文文本纠错模型的训练。
 
-  b.基于FastAPI完成模型部署，开放为后端Restful API接口服务，并通过Postman对接口逻辑和功能进行测试。
+  2. 基于FastAPI完成模型部署，开放为后端Restful API接口服务，并通过Postman对接口逻辑和功能进行测试。
 
-  c.基于Vue+ElementUI搭建高可扩展的文本纠错系统web界面，并通过网络请求对接后端API接口实现前后端联调。
+  3. 基于Vue+ElementUI搭建高可扩展的文本纠错系统web界面，并通过网络请求对接后端API接口实现前后端联调。
 
 ![文本纠错技术路线](https://gitee.com/hchhtc123/picture/raw/master/typora/%E6%96%87%E6%9C%AC%E7%BA%A0%E9%94%99%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF.png)
 
@@ -44,5 +44,4 @@
 
 ## 六.作者联系：
 
-   项目运行过程中遇到问题欢迎向项目提issue也可以qq联系1075558916
-   注意提供完整报错信息和截图便于定位和解决问题！
+   项目运行过程中遇到问题欢迎向项目提issue也可以qq联系1075558916，注意提供完整报错信息和截图便于定位和解决问题！
